@@ -22,9 +22,10 @@ app.post('/api/result',(req,res)=>{
   const id = req.body.id
   const year = req.body.year
     console.log(req.body);
-    
-    db.query(
-    `SELECT * FROM ${exam}${year} WHERE ${idtype} = ?`,
+    try {
+      db.query(
+    // `SELECT * FROM ${exam}${year} WHERE ${idtype} = ?`,
+    `SELECT * FROM ${exam} WHERE ${idtype} = ?`,
     [id],
     (err, result) => {
       if (err) return res.status(500).json({ error: err.message });
@@ -34,6 +35,11 @@ app.post('/api/result',(req,res)=>{
       
     }
   )
+    } catch (error) {
+      console.log(error);
+      
+    }
+    
 })
 
 const PORT = process.env.PORT || 3000;                        // define a port
