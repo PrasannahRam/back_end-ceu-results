@@ -1,7 +1,6 @@
 const express = require('express');       // import express
 const app = express();                    // create an Express app
 const mysql = require("mysql2");
-const PORT = 3000;                        // define a port
 const cors = require('cors'); // add this
 require("dotenv").config();
 
@@ -36,6 +35,8 @@ app.post('/api/result',(req,res)=>{
     }
   )
 })
+
+const PORT = process.env.PORT || 3000;                        // define a port
 
 // Start the server
 app.listen(PORT, () => {
