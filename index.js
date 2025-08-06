@@ -24,8 +24,8 @@ app.post('/api/result',(req,res)=>{
     console.log(req.body);
     try {
       db.query(
-    // `SELECT * FROM ${exam}${year} WHERE ${idtype} = ?`,
-    `SELECT * FROM ${exam} WHERE ${idtype} = ?`,
+    `SELECT * FROM ${exam}_${year} WHERE ${idtype} = ?`,
+    // `SELECT * FROM ${exam} WHERE ${idtype} = ?`,
     [id],
     (err, result) => {
       if (err) return res.status(500).json({ error: err.message });
