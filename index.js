@@ -17,10 +17,11 @@ app.get('/', (req, res) => {
 });
 
 app.post('/api/result',(req,res)=>{
-  const idtype = req.body.idtype
+  const idtype = {req.body.idtype}
   const exam = req.body.exam
   const id = req.body.id
   const year = req.body.year
+  
     console.log(req.body);
     try {
       db.query(
@@ -42,7 +43,7 @@ app.post('/api/result',(req,res)=>{
     
 })
 
-const PORT = process.env.PORT || 3000;                        // define a port
+const PORT = process.env.PORT || 3001;                        // define a port
 
 // Start the server
 app.listen(PORT, () => {
