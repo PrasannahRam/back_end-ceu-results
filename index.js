@@ -2,13 +2,13 @@ const express = require('express');       // import express
 const app = express();                    // create an Express app
 const mysql = require("mysql2");
 const cors = require('cors'); // add this
-require("dotenv").config();
+// require("dotenv").config();
 
 app.use(cors());    
 app.use(express.json());                  // enable parsing JSON body in requests
 console.log(process.env.MYSQL_URL);
 
-const db = mysql.createConnection(process.env.MYSQL_URL);
+const db = mysql.createConnection("mysql://root:xmTjakuoMncscDwsnpRmZniBvBCPfuoh@gondola.proxy.rlwy.net:33009/railway");
 
 
 // Define a basic route
