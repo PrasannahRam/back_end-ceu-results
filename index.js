@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/api/result',(req,res)=>{
-  const idtype = {req.body.idtype}
+  const idtype = "index_no"
   const exam = req.body.exam
   const id = req.body.id
   const year = req.body.year
