@@ -2,9 +2,12 @@ const express = require('express');       // import express
 const app = express();                    // create an Express app
 const mysql = require("mysql2");
 const cors = require('cors'); // add this
-// require("dotenv").config();
+require("dotenv").config();
 
-app.use(cors());    
+app.use(cors({
+  origin: 'http://localhost:3001', // or '*' for all origins (not recommended in production)
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+}));   
 app.use(express.json());                  // enable parsing JSON body in requests
 console.log(process.env.MYSQL_URL);
 
