@@ -5,7 +5,7 @@ const cors = require('cors'); // add this
 require("dotenv").config();
 
 app.use(cors({
-  origin: 'http://localhost:3001', // or '*' for all origins (not recommended in production)
+  origin: 'https://ceu-exams-results.vercel.app', // or '*' for all origins (not recommended in production)
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
 }));   
 app.use(express.json());                  // enable parsing JSON body in requests
