@@ -35,7 +35,7 @@ app.post('/api/result',(req,res)=>{
       if (err) return res.status(500).json({ error: err.message });
       if (result.length === 0) return res.status(404).json({ message: "No result found" });
       res.json(result[0]);
-      console.log(res.json());
+      console.log(result[0]);
       
     }
   )
